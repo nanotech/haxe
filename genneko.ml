@@ -838,7 +838,7 @@ let build ctx types =
 	packs @ methods @ boot :: names @ inits @ vars
 
 let generate com =
-	let ctx = new_context com (if Common.defined com Define.NekoV1 then 1 else 2) false in
+	let ctx = new_context com (if Common.defined com Define.NekoV1 then 1 else 3) false in
 	let t = Common.timer "neko generation" in
 	let libs = (EBlock (generate_libs_init com.neko_libs) , { psource = "<header>"; pline = 1; }) in
 	let el = build ctx com.types in
